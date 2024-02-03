@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><strong>sistema de nacionalidade</strong></h1>
+    <p>qual a sua nacionalidade?</p>
+    <input type="text" name="pas" id="pas"><br>
+    <input type="text" name="nas" id="nas">
+    <input type="button" value="verificar" onclick="resposta()">
+    <div id="max"></div>
+
+    <script>
+        function resposta(){
+            var pas = window.document.querySelector('input#pas')
+            var nas = window.document.querySelector('input#nas')
+            var max = window.document.querySelector('div#max')
+           
+            var tes = new Text(nas)
+            
+            max.innerHTML = ` <p>sua nascionalidade é ${nas.value}</p>`
+            if(nas.toLowerCase() === `brasileiro`){
+                max.innerHTML = `<p>voce é do ${pas}</p>` 
+
+            }
+            else{max.innerHTML = `<p>voce não é brasileiro</p>`}
+
+        }
+    </script>
+</body>
+</html>
