@@ -1,0 +1,35 @@
+opcao = -1
+saldo = 1500.45
+
+extrato = ""
+while True:
+    opcao = int(input("[1] Sacar \n[2] Saldo \n[3] deposito \n[5] Extrato \n[6] Sair \n\n"))
+
+    if opcao == 1:
+        s =   float(input("quanto deseja sacar: "))
+        if(s <=500.00):
+            print(f"saque de R${s:.2f} realizado com sucesso ")
+            saldo = saldo - s
+            extrato = extrato + f"saque realizado de {s:.2f} em uma operação \n\n"
+
+        else: print("valor de saque maior que R$500,00 tente novamente ") 
+
+    elif opcao == 3:
+        d = float(input("informe quanto voce quer depositar na sua conta: "))
+        print(f"for depositado R${d:.2f} na sua conta")
+        saldo = saldo + d
+
+        extrato = extrato + f"um deposito de {d:.2f} foi feito para a sua conta \n\n"
+    
+    elif opcao == 2:
+        print(f"seu saldo é de R${saldo :.2f}")
+        
+    elif opcao == 5:
+        print(extrato)
+
+    elif opcao == 6:
+        print("operação terminada obrigado")
+        break
+
+    else:
+        print("opção digitada invalida")
